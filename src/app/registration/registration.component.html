@@ -16,7 +16,7 @@
     </div>
     <div class="form-group m-4 ">
         <label for="Email">Enter Email</label>
-        <input class="form-control" required pattern="^([a-zA-z_][a-zA-z_0-9-.]{3,20})@([a-zA-z_]{3,12}).([a-zA-z_]{3,12})(.[a-zA-z_]{2,12})?" #Email = 'ngModel' [(ngModel)]="contactservic.selectModel.Email" type="text" name="Email" id="Name" >
+        <input class="form-control" required pattern="^([a-zA-z_][a-zA-z_0-9-.]{3,20})@([a-zA-z_]{3,12}).([a-zA-z_]{3,12})(.[a-zA-z_]{2,12})?" #Email = 'ngModel' [(ngModel)]="contactservic.selectModel.Email" [class.is-invalid]="Email.invalid && Email.touched" type="text" name="Email" id="Name" >
         <div *ngIf="Email.errors&&(Email.touched&& Email.invalid)" >
             <small class="text-danger" *ngIf="Email.errors.required" >Email Is Required</small>
             <small class="text-danger" *ngIf="Email.errors.pattern" >Email Is Not In Correct Format </small>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group m-4 ">
         <label for="Mob">Enter Mobile Number</label>
-        <input class="form-control" #Mob = 'ngModel' required pattern="^[7-9][0-9]{9}$" [(ngModel)]="contactservic.selectModel.Mob" type="text" name="Mob" id="Mob" >
+        <input class="form-control" #Mob = 'ngModel' required pattern="^[7-9][0-9]{9}$" [(ngModel)]="contactservic.selectModel.Mob" [class.is-invalid]="Mob.invalid && Mob.touched" type="text" name="Mob" id="Mob" >
         <div *ngIf="Mob.errors&&(Mob.touched&&Mob.invalid)" >
             <small *ngIf="Mob.errors.required" class="text-danger">Mobile Number Required</small>
             <small *ngIf=" Mob.errors.pattern" class="text-danger">Mobile Number Is Not Correct</small>
@@ -34,7 +34,7 @@
     <div class="form-group m-4 ">
         <div class="btn">
             <span>Profile Upload </span>
-            <input #filereftype [(ngModel)]="contactservic.selectModel.imageUrl"  (change)="upload($event)" [required]="required" class="ng-invalid" accept="image/*" id="" type="file" name="file"  >
+            <input #filereftype [(ngModel)]="contactservic.selectModel.file"  (change)="upload($event)" [required]="required" class="ng-invalid" accept="image/*" [class.is-invalid]="filereftype.invalid && filereftype.touched" id="" type="file" name="file"  >
             <!-- accept="image/png,image/jpg" and accept="image/*" -->
           </div>
         

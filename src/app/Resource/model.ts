@@ -1,4 +1,3 @@
-import { Url } from "url";
 
 export class Model {
 
@@ -6,6 +5,6 @@ export class Model {
     Name:string;
     Email:string;
     Mob:string;
-    imageUrl:string;
+    file:string;
 
 }

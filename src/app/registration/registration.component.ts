@@ -78,7 +78,7 @@ export class RegistrationComponent implements OnInit {
       Name:"",
       Email:"",
       Mob:"",
-      imageUrl:""
+      file:""
 
 }
 
@@ -107,7 +107,7 @@ this.af.upload(filepath,this.path).snapshotChanges().pipe(
     fileref.getDownloadURL().subscribe((url)=>{
       this.imageUrl=url;
       console.log("this is link "+this.imageUrl);
-      form.value.imageUrl=this.imageUrl;
+      form.value.file=this.imageUrl;
       this.contactservic.insertData(form.value);
     this.message="Data Save Successfully";
     this.color="green";
@@ -169,7 +169,7 @@ UpdateAndUpload(form:NgForm){
     finalize(()=>{
       fileref.getDownloadURL().subscribe((url)=>{
         this.imageUrl=url;
-        form.value.imageUrl=this.imageUrl;
+        form.value.file=this.imageUrl;
         this.contactservic.updateData(form.value,this.idtype);
         this.onreset();
 
