@@ -1,0 +1,51 @@
+<div class=" m-4">
+    <h4 [style.color]="color" class="text-center">{{message}}</h4>
+    <div class="col-8 offset-2 mt-4">
+<form #formData='ngForm' (ngSubmit)="uploadAndInsert(formData)" >
+    <div class="form-group m-4 ">
+        <label for="Name">Enter Name</label>
+
+        <input class="form-control" #name = 'ngModel' pattern="^[A-Za-z][A-Z a-z]{2,20}$" required [class.is-invalid]="name.invalid && name.touched"  [(ngModel)]="contactservic.selectModel.Name" type="text" name="Name" id="Name" >
+
+        <div *ngIf=" name.errors&&(name.touched && name.invalid) " >
+            <small class="text-danger" *ngIf="name.errors.required" >Name Is Required</small>
+            <small class="text-danger" *ngIf="name.errors.pattern" >Name Is Not In Correct Format </small>
+
+        </div>
+
+    </div>
+    <div class="form-group m-4 ">
+        <label for="Email">Enter Email</label>
+        <input class="form-control" required pattern="^([a-zA-z_][a-zA-z_0-9-.]{3,20})@([a-zA-z_]{3,12}).([a-zA-z_]{3,12})(.[a-zA-z_]{2,12})?" #Email = 'ngModel' [(ngModel)]="contactservic.selectModel.Email" type="text" name="Email" id="Name" >
+        <div *ngIf="Email.errors&&(Email.touched&& Email.invalid)" >
+            <small class="text-danger" *ngIf="Email.errors.required" >Email Is Required</small>
+            <small class="text-danger" *ngIf="Email.errors.pattern" >Email Is Not In Correct Format </small>
+        </div>
+    </div>
+    <div class="form-group m-4 ">
+        <label for="Mob">Enter Mobile Number</label>
+        <input class="form-control" #Mob = 'ngModel' required pattern="^[7-9][0-9]{9}$" [(ngModel)]="contactservic.selectModel.Mob" type="text" name="Mob" id="Mob" >
+        <div *ngIf="Mob.errors&&(Mob.touched&&Mob.invalid)" >
+            <small *ngIf="Mob.errors.required" class="text-danger">Mobile Number Required</small>
+            <small *ngIf=" Mob.errors.pattern" class="text-danger">Mobile Number Is Not Correct</small>
+
+        </div>
+    </div>
+    <div class="form-group m-4 ">
+        <div class="btn">
+            <span>Profile Upload </span>
+            <input #filereftype [(ngModel)]="contactservic.selectModel.imageUrl"  (change)="upload($event)" [required]="required" class="ng-invalid" accept="image/*" id="" type="file" name="file"  >
+            <!-- accept="image/png,image/jpg" and accept="image/*" -->
+          </div>
+        
+      </div>
+    
+    <div>
+        <button [disabled]="formData.invalid " (click)="filereftype.value = null" [style.display]="displaySubmit"  type="submit" class="btn btn-block btn-Submit"> Submit</button>
+        <button [disabled]="formData.invalid" [style.display]="displayUpdate" type="button" (click)="updateAndSubmit(formData)" class="btn btn-block btn-Update"> Update</button>
+        <button (click)="onreset(formData)" type="button" class="btn btn-block btn-Reset"> Reset</button>
+
+    </div>
+</form>
+    </div>
+</div>
