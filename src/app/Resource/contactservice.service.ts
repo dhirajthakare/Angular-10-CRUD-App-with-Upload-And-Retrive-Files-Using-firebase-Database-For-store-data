@@ -30,8 +30,7 @@ export class ContactserviceService {
 
   // update Data Api 
   updateData(obj:Model,id){
-    console.log(obj);
-    console.log(id);
+   
     return this.firestore.doc('Contact/'+id).update({...obj});
   }
 

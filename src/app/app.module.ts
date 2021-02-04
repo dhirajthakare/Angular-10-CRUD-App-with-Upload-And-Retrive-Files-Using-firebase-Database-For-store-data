@@ -34,7 +34,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireDatabaseModule
+    AngularFireStorageModule
 
   ],
   providers: [{ provide:LocationStrategy , useClass:HashLocationStrategy }],

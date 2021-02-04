@@ -51,42 +51,24 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
-    // for Submit form data
-  onSubmit(form:NgForm){
-
-    this.contactservic.insertData(form.value);
-    this.message="Data Save Successfully";
-    this.color="green";
-    this.onreset();
-    // this.uploadImage();
-
-
-
-  }
   
-
-
-
 // reset form
-  onreset(form?:NgForm){
-    if(form)
-    form.reset();
+onreset(form?:NgForm){
+  if(form)
+  form.reset();
 
-    this.contactservic.selectModel = {
+  this.contactservic.selectModel = {
 
-      id: "",
-      Name:"",
-      Email:"",
-      Mob:"",
-      file:""
+    id: "",
+    Name:"",
+    Email:"",
+    Mob:"",
+    file:""
 
 }
 
+}
 
-
-  }
-
- 
 
 //file upload
 upload($event){
@@ -111,7 +93,7 @@ this.af.upload(filepath,this.path).snapshotChanges().pipe(
       this.contactservic.insertData(form.value);
     this.message="Data Save Successfully";
     this.color="green";
-    this.onreset();
+    this.onreset(form);
     this.statechange=false;
     })
   })
@@ -155,7 +137,7 @@ this.af.upload(filepath,this.path).snapshotChanges().pipe(
    updateData(form:NgForm ){
 
     this.contactservic.updateData(form.value,this.idtype);
-    this.onreset();
+    this.onreset(form);
 
 
 }
@@ -171,7 +153,7 @@ UpdateAndUpload(form:NgForm){
         this.imageUrl=url;
         form.value.file=this.imageUrl;
         this.contactservic.updateData(form.value,this.idtype);
-        this.onreset();
+        this.onreset(form);
 
       
       })
