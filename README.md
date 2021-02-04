@@ -1,27 +1,26 @@
-# Crudfirebase
+# Angular-10-CRUD-App-with-Upload-And-Retrive-Files-Using-firebase-Database-For-store-data
+in that repository you will learn how to we can make a Angular 10 web App with fully crud functionality And How to we Can upload files on server And how to Retrieve it from server we use Backend as firebase Database  ..
+  
+    
+    
+# output will be look like As follows :-
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  
+    
+![frontEndreg](https://user-images.githubusercontent.com/32159491/106566449-54d88180-6556-11eb-9647-01d00d29ca26.png)
+  
+    
+      
+![frontendInfo](https://user-images.githubusercontent.com/32159491/106566444-53a75480-6556-11eb-9734-7ff2ddaad713.png)
+  
+    
+      
+          
+ ![firebasecloud](https://user-images.githubusercontent.com/32159491/106566451-55711800-6556-11eb-9c48-38c28f823a91.png)
+  
+    
+      
+          
+          
+          
+                                                    # THANK YOU
